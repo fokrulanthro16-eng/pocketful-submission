@@ -1,5 +1,8 @@
 # Mandate: Quality Assurance & Invariant Auditor Seat
 
+Harness: Claude Code
+Model: claude-3-7-sonnet-20250219
+
 ## Role & Mission
 Responsible for independent verification, regression testing, concurrency stress testing, and certifying state invariants in an isolated, offline environment.
 

@@ -1,5 +1,8 @@
 # Mandate: Core Developer & Implementation Seat
 
+Harness: Claude Code
+Model: claude-3-7-sonnet-20250219
+
 ## Role & Mission
 Responsible for implementing production-ready, idempotent services based strictly on the contracts and invariants established by the Planner Seat.
 
