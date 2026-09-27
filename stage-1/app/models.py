@@ -1,0 +1,113 @@
+from __future__ import annotations
+from typing import Any, Dict, List, Literal, Optional
+from pydantic import BaseModel, Field
+
+class ApiError(Exception):
+    def __init__(self, status_code: int, code: str, message: str = ""):
+        super().__init__(message)
+        self.status_code = status_code
+        self.code = code
+        self.message = message or code
+
+class ErrorDetail(BaseModel):
+    code: str
+    message: str
+
+class ErrorResponse(BaseModel):
+    error: ErrorDetail
+
+class UserSignupRequest(BaseModel):
+    email: str
+    password: str
+    display_name: str
+
+class UserLoginRequest(BaseModel):
+    email: str
+    password: str
+
+class AuthResponse(BaseModel):
+    user_id: str
+    display_name: str
+    token: str
+
+class MeResponse(BaseModel):
+    user_id: str
+    display_name: str
+    handle: str
+    balance: int
+    currency: str
+    minor_units: int
+
+class PaymentCreateRequest(BaseModel):
+    to_handle: str
+    amount: Any
+    note: Optional[str] = ""
+    visibility: Optional[str] = "public"
+
+class PaymentResponse(BaseModel):
+    payment_id: str
+    from_user_id: str
+    from_handle: str
+    to_user_id: str
+    to_handle: str
+    amount: int
+    currency: str
+    note: str
+    visibility: str
+    request_id: Optional[str] = None
+    settlement_id: Optional[str] = None
+    created_at: str
+
+class RequestCreateRequest(BaseModel):
+    payer_handle: str
+    amount: Any
+    note: Optional[str] = ""
+
+class RequestPayRequest(BaseModel):
+    visibility: Optional[str] = "public"
+
+class RequestResponse(BaseModel):
+    request_id: str
+    requester_id: str
+    requester_handle: str
+    payer_id: str
+    payer_handle: str
+    amount: int
+    currency: str
+    note: str
+    status: Literal["pending", "paid", "declined", "cancelled"]
+    payment_id: Optional[str] = None
+    created_at: str
+
+class SplitCreateRequest(BaseModel):
+    amount: Any
+    participant_handles: List[str]
+    note: Optional[str] = ""
+
+class SplitShare(BaseModel):
+    handle: str
+    amount: int
+
+class SplitResponse(BaseModel):
+    split_id: str
+    amount: int
+    currency: str
+    note: str
+    shares: List[SplitShare]
+    requests: List[RequestResponse]
+    created_at: str
+
+class SettlementTransfer(BaseModel):
+    from_handle: str
+    to_handle: str
+    amount: Any
+    note: Optional[str] = ""
+    visibility: Optional[str] = "public"
+
+class SettlementCreateRequest(BaseModel):
+    transfers: List[SettlementTransfer]
+
+class SettlementResponse(BaseModel):
+    settlement_id: str
+    committed_at: str
+    payments: List[PaymentResponse]

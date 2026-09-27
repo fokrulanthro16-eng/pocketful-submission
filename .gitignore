@@ -1,6 +1,10 @@
 __pycache__/
 *.py[codz]
+*.pyc
 .pytest_cache/
-/runs/
+runs/
 .env
 .env.*
+*.log
+
+.vercel
