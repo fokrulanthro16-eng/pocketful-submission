@@ -6,3 +6,5 @@ runs/
 .env
 .env.*
 *.log
+
+.vercel
