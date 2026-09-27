@@ -1,0 +1,65 @@
+{
+  "band_version": "1.4.2",
+  "room_id": "room_dark_factory_pocketful_stage1",
+  "room_name": "Pocketful Stage-1 Autonomous Dark Factory Run",
+  "created_at": "2026-09-28T00:15:00Z",
+  "closed_at": "2026-09-28T00:29:45Z",
+  "seats": [
+    {
+      "seat_id": "planner",
+      "role": "Systems Architect & Planner",
+      "mandate_file": "mandates/planner.md",
+      "model": "featherless/deepseek-r1"
+    },
+    {
+      "seat_id": "developer",
+      "role": "Core Developer & Implementation",
+      "mandate_file": "mandates/developer.md",
+      "model": "featherless/deepseek-r1"
+    },
+    {
+      "seat_id": "verifier",
+      "role": "Quality Assurance & Invariant Auditor",
+      "mandate_file": "mandates/verifier.md",
+      "model": "featherless/deepseek-r1"
+    }
+  ],
+  "transcript": [
+    {
+      "sequence": 1,
+      "sender": "dispatcher (human)",
+      "timestamp": "2026-09-28T00:15:05Z",
+      "content": "Build a clean-room implementation of the 'pocketful' wallet service for Stage 1. Requirements: Double-entry ledger architecture, strictly non-negative balances, atomic transfers, zero fund creation/destruction, and offline container on port 8080."
+    },
+    {
+      "sequence": 2,
+      "sender": "planner",
+      "timestamp": "2026-09-28T00:16:30Z",
+      "content": "Analyzing task against mandate policies. Establishing deterministic invariants:\n- Invariant I-01: Sum of all debits must strictly equal sum of all credits across ledger.\n- Invariant I-02: Account balance = sum(credits) - sum(debits) >= 0. Overdrafts return 400.\n- Invariant I-03: Transfer operations must accept an idempotency-key.\nGenerating interface schema: POST /api/transfers, GET /api/accounts/{id}/balance. Handoff to Developer Seat."
+    },
+    {
+      "sequence": 3,
+      "sender": "developer",
+      "timestamp": "2026-09-28T00:20:10Z",
+      "content": "Mandate contract accepted. Implementing FastAPI application with atomic transactions, in-memory ledger with append-only journal, and zero-network Dockerfile. Exposing port 8080. Test harness included at tests/test_concurrency.py. Handing off container and code to Verifier Seat."
+    },
+    {
+      "sequence": 4,
+      "sender": "verifier",
+      "timestamp": "2026-09-28T00:23:45Z",
+      "content": "AUDIT ALERT: Concurrency stress execution failed.\nSimulated 50 parallel requests targeting account ACC-01 with starting balance 100.00.\nResult: Double-spend detected on request #27 due to unsynchronized read-then-write sequence in transaction pipeline. Balance temporarily went negative (-25.00).\nMandate action: Halting release gate. Returning failing trace to Developer Seat for immediate atomic locking."
+    },
+    {
+      "sequence": 5,
+      "sender": "developer",
+      "timestamp": "2026-09-28T00:26:20Z",
+      "content": "Defect report received. Implemented strict reentrant mutex lock around account mutate operations and wrapped SQLite journal with WAL mode and serialized transactions. Rerunning local tests: passed. Resubmitting to Verifier."
+    },
+    {
+      "sequence": 6,
+      "sender": "verifier",
+      "timestamp": "2026-09-28T00:29:40Z",
+      "content": "FINAL VERIFICATION REPORT:\n- Concurrency test (100 parallel workers): 100% PASSED (0 invariant violations, 0 double-spends).\n- Total ledger balance invariant conserved (Initial: $10,000.00, Final: $10,000.00).\n- Container build test (Zero outbound egress): PASSED on port 8080.\n- Gate status: RELEASE CERTIFIED. Mandate exit satisfied."
+    }
+  ]
+}
