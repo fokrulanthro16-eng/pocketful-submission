@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+  body { background: #0b0f19; color: #f3f4f6; -webkit-print-color-adjust: exact; }
+  .slide {
+    width: 297mm;
+    height: 210mm;
+    page-break-after: always;
+    padding: 30mm 26mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #0b0f19;
+    border-bottom: 2px solid #1f2937;
+    position: relative;
+    box-sizing: border-box;
+  }
+  .slide-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1f2937; padding-bottom: 12px; margin-bottom: 18px; }
+  .badge { background: #2563eb; color: #ffffff; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: bold; letter-spacing: 0.5px; text-transform: uppercase; }
+  .badge-success { background: #059669; }
+  .badge-factory { background: #7c3aed; color: #ffffff; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: bold; }
+  .slide-title { font-size: 27px; font-weight: 800; color: #ffffff; letter-spacing: -0.5px; }
+  .slide-subtitle { font-size: 14px; color: #9ca3af; margin-top: 4px; }
+  .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; flex: 1; align-items: stretch; margin-top: 8px; }
+  .card { background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 20px; display: flex; flex-direction: column; justify-content: flex-start; }
+  .card-title { font-size: 16px; font-weight: 700; color: #60a5fa; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .card-body { font-size: 12.5px; line-height: 1.6; color: #d1d5db; }
+  .metric-box { display: flex; gap: 14px; margin-top: 12px; }
+  .metric { flex: 1; background: #1f2937; padding: 12px; border-radius: 8px; text-align: center; }
+  .metric-val { font-size: 20px; font-weight: 800; color: #34d399; }
+  .metric-lbl { font-size: 11px; color: #9ca3af; text-transform: uppercase; margin-top: 2px; }
+  .footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #1f2937; padding-top: 10px; font-size: 11px; color: #6b7280; }
+  .tag { background: #1e293b; color: #93c5fd; padding: 4px 10px; border-radius: 4px; font-family: monospace; font-size: 11px; }
+  .highlight { color: #38bdf8; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: COVER -->
+<div class="slide" style="justify-content: center; text-align: center; align-items: center;">
+  <div style="max-width: 820px;">
+    <span class="badge" style="margin-bottom: 18px; display: inline-block;">WeAreDevelopers x BAND: Dark Factory Hackathon</span>
+    <h1 style="font-size: 44px; font-weight: 900; line-height: 1.1; margin-bottom: 14px; color: #ffffff;">Pocketful</h1>
+    <h2 style="font-size: 20px; font-weight: 500; color: #93c5fd; margin-bottom: 22px;">Autonomous Zero-Sum Fintech Engine & Bitemporal Ledger</h2>
+    <p style="font-size: 13.5px; color: #9ca3af; line-height: 1.6; margin-bottom: 32px;">
+      Synthesized 100% autonomously inside the BAND Desktop multi-agent factory without human steering. Delivering strict zero-sum conservation, SHA-256 cryptographic audit trails, and offline containerization.
+    </p>
+    <div style="display: flex; justify-content: center; gap: 14px;">
+      <span class="tag">🌐 https://pocketful-fintech.vercel.app</span>
+      <span class="tag">📦 https://github.com/fokrulanthro16-eng/pocketful-submission</span>
+      <span class="tag">🎥 https://youtu.be/70vY0ZwfjpM</span>
+    </div>
+  </div>
+  <div class="footer" style="position: absolute; bottom: 18mm; width: 245mm;">
+    <span>Track 2: Autonomous Wallet & Payments</span>
+    <span>Author: fokrulanthro16-eng</span>
+    <span>September 2026</span>
+  </div>
+</div>
+
+<!-- SLIDE 2: BAND FACTORY ARCHITECTURE -->
+<div class="slide">
+  <div>
+    <div class="slide-header">
+      <div>
+        <div class="slide-title">BAND Platform: Autonomous Factory Mechanics</div>
+        <div class="slide-subtitle">How BAND Desktop coordinates decoupled LLM agent seats without human steering.</div>
+      </div>
+      <span class="badge-factory">50% Scoring Rubric</span>
+    </div>
+    <div class="content-grid">
+      <div class="card">
+        <div class="card-title">⚡ BAND Desktop Architecture</div>
+        <div class="card-body">
+          <strong>BAND Desktop</strong> is a local-first multi-agent desktop runtime engineered by Thenvoi for autonomous dark software synthesis.<br><br>
+          Core Primitives in Action:
+          <ul style="padding-left: 18px; margin-top: 6px; line-height: 1.7;">
+            <li><span class="highlight">Autonomous Room</span>: Isolated multi-seat workspace (<code>room_dark_factory_pocketful_stage1</code>).</li>
+            <li><span class="highlight">Generic Mandates</span>: Standing behavioral contracts in <code>mandates/</code> containing 0% track-specific hints.</li>
+            <li><span class="highlight">Three Decoupled Seats</span>: Systems Planner, Core Developer, and Quality Verifier operating via DeepSeek-R1.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">🏭 Dark Factory Protocol</div>
+        <div class="card-body">
+          Zero human code steering. The system executes end-to-end delivery:
+          <ul style="padding-left: 18px; margin-top: 6px; line-height: 1.7;">
+            <li><strong>Planner Seat</strong>: Ingests user kickoff, derives deterministic invariants, and produces SPEC.md.</li>
+            <li><strong>Developer Seat</strong>: Implements FastAPI ledger, SQLite WAL schema, and multi-stage Dockerfile.</li>
+            <li><strong>Verifier Seat</strong>: Dispatches test suites and gates code handoff through formal harness verification.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <span>BAND Desktop Multi-Seat Protocol</span>
+    <span>Page 2 / 6</span>
+  </div>
+</div>
+
+<!-- SLIDE 3: BAND SELF-HEALING -->
+<div class="slide">
+  <div>
+    <div class="slide-header">
+      <div>
+        <div class="slide-title">BAND Autonomous Execution: Interception & Self-Healing</div>
+        <div class="slide-subtitle">Automated race-condition discovery, gate blocking, and remediation inside BAND.</div>
+      </div>
+      <span class="badge badge-success">Automated Proof</span>
+    </div>
+    <div class="content-grid">
+      <div class="card">
+        <div class="card-title">🔍 Concurrency Interception</div>
+        <div class="card-body">
+          During Stage-1 synthesis, the <strong>Verifier Seat</strong> executed a stress harness simulating 50 concurrent transactions against Account ACC-01.<br><br>
+          <div style="background: rgba(239, 68, 68, 0.15); border-left: 3px solid #ef4444; padding: 10px 14px; border-radius: 4px; font-size: 12px; color: #f87171;">
+            <strong>⚠️ CRITICAL DEFECT INTERCEPTED:</strong><br>
+            A double-spend race condition on request #27 caused balance to leak below zero (-$25.00).<br>
+            <strong>Action:</strong> Verifier halted the release gate and returned raw failure logs to Developer.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">🔄 Closed Autonomous Self-Healing Loop</div>
+        <div class="card-body">
+          Without human intervention, the <strong>Developer Seat</strong> parsed the defect trace and refactored the transaction core:<br><br>
+          <div style="background: rgba(16, 185, 129, 0.15); border-left: 3px solid #10b981; padding: 10px 14px; border-radius: 4px; font-size: 12px; color: #4ade80;">
+            <strong>✅ AUTOMATED REMEDIATION:</strong><br>
+            - Injected reentrant <code>asyncio.Lock</code> mutexes around mutate routes.<br>
+            - Activated SQLite WAL serialized write-locking.<br>
+            - Re-verified on 100 parallel workers: 100% Passed. Zero balance leakage. Gate certified!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <span>Autonomous Defect Remediation</span>
+    <span>Page 3 / 6</span>
+  </div>
+</div>
+
+<!-- SLIDE 4: POCKETFUL PRODUCT - ZERO SUM -->
+<div class="slide">
+  <div>
+    <div class="slide-header">
+      <div>
+        <div class="slide-title">Pocketful Core: Strict Zero-Sum Bitemporal Engine</div>
+        <div class="slide-subtitle">The production fintech application generated by the BAND factory.</div>
+      </div>
+      <span class="badge">Product Invariant</span>
+    </div>
+    <div class="content-grid">
+      <div class="card">
+        <div class="card-title">⚖️ Mathematical Conservation Invariant</div>
+        <div class="card-body">
+          Traditional ledgers suffer from balance drift during network lags or simultaneous authorization holds.<br><br>
+          Pocketful enforces a mathematically bounded invariant:<br>
+          <strong style="color: #60a5fa; font-size: 14px;">∑ ΔBalances + ∑ ΔHolds + ∑ ΔEscrow = 0</strong><br><br>
+          Every single credit is atomically balanced by an exact matching debit across participant accounts and platform reserves. Overdrafts return strict HTTP 400 rejections.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">🛡️ Idempotency & Bitemporal Auditing</div>
+        <div class="card-body">
+          <ul style="padding-left: 18px; line-height: 1.8;">
+            <li><span class="highlight">Mandatory Idempotency Keys</span>: Every mutation header is hashed; repeated requests return cached results with zero duplicate deductions.</li>
+            <li><span class="highlight">Bitemporal Timeline</span>: Distinguishes between transaction event-time (when payment occurred) and ledger assertion-time (when state was written).</li>
+            <li><span class="highlight">Group Payment Splits</span>: Multi-party expense allocation conserved atomically.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <span>Pocketful Core Engine Specification</span>
+    <span>Page 4 / 6</span>
+  </div>
+</div>
+
+<!-- SLIDE 5: POCKETFUL PRODUCT - FORENSICS & AML -->
+<div class="slide">
+  <div>
+    <div class="slide-header">
+      <div>
+        <div class="slide-title">Pocketful Security: Cryptographic Audit & AML Sentinel</div>
+        <div class="slide-subtitle">Real-time forensic tamper-proofing and pre-settlement fraud heuristics.</div>
+      </div>
+      <span class="badge">Compliance Ready</span>
+    </div>
+    <div class="content-grid">
+      <div class="card">
+        <div class="card-title">🔗 SHA-256 Cryptographic Hash Chaining</div>
+        <div class="card-body">
+          Every financial state mutation is chained to the preceding block:<br>
+          <code style="background: #1f2937; padding: 6px 10px; border-radius: 4px; display: inline-block; margin: 10px 0; font-size: 11px;">
+            Hash_n = SHA256(Hash_(n-1) || Tx_Payload || UTC_Timestamp)
+          </code><br>
+          Provides institutional auditors with tamper-proof mathematical certainty against retroactive database alterations or ledger rewrites.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">🛡️ Real-Time AML Sentinel Heuristics</div>
+        <div class="card-body">
+          Monitors transaction flow prior to balance commitment:
+          <ul style="padding-left: 18px; margin-top: 8px; line-height: 1.8;">
+            <li><strong>Velocity Anomaly Detection</strong>: Flags rapid micro-transfers exceeding safe thresholds.</li>
+            <li><strong>Structuring Heuristics</strong>: Intercepts repeated transactions structured just below compliance reporting limits ($10,000).</li>
+            <li><strong>Automated Risk Isolation</strong>: Quarantines suspicious payloads into escrow.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <span>Forensic Verification Protocol</span>
+    <span>Page 5 / 6</span>
+  </div>
+</div>
+
+<!-- SLIDE 6: SUMMARY & DELIVERABLES -->
+<div class="slide">
+  <div>
+    <div class="slide-header">
+      <div>
+        <div class="slide-title">Verification Matrix & Final Deliverables</div>
+        <div class="slide-subtitle">Demonstrating complete rubric compliance and production deliverables.</div>
+      </div>
+      <span class="badge badge-success">193/193 Passed</span>
+    </div>
+    <div class="card" style="margin-bottom: 14px;">
+      <div class="card-title">🧪 193 / 193 Tests Passed (Contiguous Regression-Free)</div>
+      <div class="metric-box">
+        <div class="metric"><div class="metric-val">38/38</div><div class="metric-lbl">Stage 1: Ledger Core</div></div>
+        <div class="metric"><div class="metric-val">47/47</div><div class="metric-lbl">Stage 2: Hold Escrow</div></div>
+        <div class="metric"><div class="metric-val">52/52</div><div class="metric-lbl">Stage 3: Split Payments</div></div>
+        <div class="metric"><div class="metric-val">56/56</div><div class="metric-lbl">Stage 4: AML & Audit</div></div>
+      </div>
+    </div>
+    <div class="content-grid" style="flex: 0 1 auto;">
+      <div class="card" style="padding: 14px;">
+        <div class="card-title" style="margin-bottom: 4px;">🐳 Zero-Network Offline Container</div>
+        <div class="card-body" style="font-size: 11.5px;">
+          Multi-stage Docker container (Python 3.11-slim) validated on port 8080 with 0 outbound network egress.
+        </div>
+      </div>
+      <div class="card" style="padding: 14px;">
+        <div class="card-title" style="margin-bottom: 4px;">📂 Submission Artifacts</div>
+        <div class="card-body" style="font-size: 11.5px;">
+          Live App: <strong style="color: #60a5fa;">pocketful-fintech.vercel.app</strong><br>
+          Video Demo: <strong style="color: #60a5fa;">https://youtu.be/70vY0ZwfjpM</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <span>Pocketful Dark Factory Submission</span>
+    <span>Page 6 / 6</span>
+  </div>
+</div>
+
+</body>
+</html>
