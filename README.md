@@ -135,7 +135,7 @@ Packaged inside an isolated multi-stage `Dockerfile` (`python:3.11-slim`) operat
 
 ## 🎥 Video Walkthrough & Script Reference
 
-- **Video Asset:** `assets/walkthrough_demo.mp4`
+- **Video Asset:** `https://youtu.be/70vY0ZwfjpM`
 - **Narration Script:** Complete 2-minute pitch located in `SUBMISSION_KIT.md` covering the BAND Desktop factory room, harness verification, and live bitemporal UI.
 
 ---
